@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>ZuriHac 2019</title>
     <link rel="icon" type="image/png" href="/images/favicon.png">
-    <link rel="stylesheet" type="text/css" href="/css/zurihac.css">
+    <link rel="stylesheet" type="text/css" href="/css/zurihac2019.css">
   </head>
   <body>
     <!-- Main menu things -->
@@ -46,6 +46,10 @@
 </div>
 
 <section>
+  <p class="action" style="font-size: 20px">
+    <a href="/zurihac2020">Are you looking for ZuriHac 2020?</a>
+  </p>
+
   <p class="question">What is ZuriHac?</p>
 
   <p class="answer">
@@ -98,7 +102,7 @@
   </a>
 
   <a href="https://www.fretlink.com/" target="_blank">
-    <img alt="Fretlink" src="/images/s43/fretlink.png">
+    <img alt="Fretlink" src="/images/s43/fretlink.svg">
   </a>
 
   <a href="https://developers.google.com/open-source/" target="_blank">
@@ -114,7 +118,8 @@
   </a>
 
   <a href="https://www.hsr.ch/en" target="_blank">
-    <img alt="HSR" src="/images/s43/hsr.png">
+    <!-- This SVG needs explit width / height. -->
+    <img width="180px" height="60px" alt="HSR" src="/images/s43/hsr.svg">
   </a>
 
   <a href="https://www.myrtle.ai/" target="_blank">
@@ -123,11 +128,11 @@
     <img style="width: 100px; height: 100px;
                 max-width: initial; max-height: initial;
                 margin-bottom: -10px;"
-        alt="myrtle.ai" src="/images/s43/myrtle.png">
+        alt="myrtle.ai" src="/images/s43/myrtle.svg">
   </a>
 
   <a href="https://serokell.io/" target="_blank">
-    <img alt="Serokell" src="/images/s43/serokell.png">
+    <img alt="Serokell" src="/images/s43/serokell.svg">
   </a>
 
   <a href="https://tezos.com/" target="_blank">
@@ -144,7 +149,7 @@
   </a>
 
   <a href="https://www.well-typed.com/" target="_blank">
-    <img alt="Well-Typed" src="/images/s43/well-typed.png">
+    <img alt="Well-Typed" src="/images/s43/well-typed.svg">
   </a>
 
   <p>
@@ -286,6 +291,10 @@
           <strong>Type inference as constraint solving: how GHC's type
           inference engine actually works.</strong>
         </p>
+        <ul>
+          <li><a href="https://drive.google.com/file/d/1NRkP0hz-0Yo49Rto70b2nUwxjPiGD9Ci/view">Slides</a></li>
+          <li><a href="https://www.youtube.com/watch?v=x3evzO8O9e8">Video</a></li>
+        </ul>
         <p>
           Simon is one of the designers of the Haskell language, an inspiring
           leader for the whole Haskell community, and the main developer
@@ -340,6 +349,9 @@
         </div>
         <p>Keynote at 16.00 on Saturday:</p>
         <p><strong>From Zero to Haskell: Lessons Learned.</strong></p>
+        <ul>
+          <li><a href="https://drive.google.com/file/d/1lsBz-FKHpQttFLBp7OAv32O1QKtrdJaT/view">Slides</a></li>
+        </ul>
         <p>
           Haskell/Nix developer, cloud infrastructure engineer and architect,
           <a href="http://aosabook.org/en/git.html">author</a>,
@@ -369,6 +381,10 @@
           <strong>A Type-ical Case Study: The Sound Type-Indexed Type Checker.
           </strong>
         </p>
+        <ul>
+          <li><a href="https://drive.google.com/file/d/19UcvoenEePRiWohf8M6CYzr5MEKH9ppq/view">Slides</a></li>
+          <li><a href="/zurihac2019/files/stitch.tar.gz">Code</a></li>
+        </ul>
         <p>
          Richard is an Assistant Professor at Bryn Mawr College.  He researches
          functional programming languages and type systems.  In the Haskell
@@ -396,6 +412,9 @@
         </div>
         <p>Keynote at 17.00 on Friday:</p>
         <p><strong>Selective Applicative Functors.</strong></p>
+        <ul>
+          <li><a href="https://drive.google.com/file/d/1UJUkNo4HEB36MBOe2UQ7z29Lrkfk0bs1/view">Slides</a></li>
+        </ul>
         <p>
           Andrey is a Senior Lecturer at Newcastle University.  He has done a
           lot of work on the
@@ -842,7 +861,7 @@
     before the Hackathon, we will ask you to <em>confirm</em> your registration
     and after that you will be able to access your ticket.
   </p>
-  <a class="action" href="https://zureg.zfoh.ch/register">To the registration</a>
+  <a class="action" href="#registration">The registration is closed</a>
   <p>
     Once we reach maximum capacity you will be queued into a wait list.  In case
     that somebody cancels we will fill up the seats from the wait list in first
@@ -944,7 +963,7 @@
       <li><strong>Sponsoring</strong>: Silvio Böhler</li>
       <li><strong>HSR Location and Facilities</strong>: Ingrid Vettiger, Farhad Mehta</li>
       <li><strong>Food and Beverages</strong>: Niklas Hambüchen</li>
-      <li><strong>Additional help</strong>: Arvin Moezzi, Gleb Peregud, Ivan Kristo, Simon Meier, Tomas Carnecky</li>
+      <li><strong>Additional help</strong>: Arvin Moezzi, Bieke Hoefkens, Gleb Peregud, Ivan Kristo, Simon Meier, Tomas Carnecky</li>
     </ul>
   <section>
 </div>
@@ -962,7 +981,7 @@
     </main>
 
     <footer>
-      Copyright © 2018 - 2019 Zürich Friends of Haskell.
+      Copyright © 2018 - 2022 Zürich Friends of Haskell.
       <a href="https://github.com/zfoh/zfoh.ch">Source code available</a>
       ·
       <a href="/terms-and-conditions.html">Terms and Conditions</a>
