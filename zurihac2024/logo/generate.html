@@ -1,0 +1,101 @@
+<style>
+    html {
+        font-family: sans-serif;
+        color: white;
+    }
+</style>
+<script type="text/JavaScript" src="gl-matrix-min.js"></script>
+<script type="text/JavaScript" src="render2024logo.js"></script>
+<script type="text/JavaScript" src="zurihac2024logo.js"></script>
+<script type="text/JavaScript" src="colors.js"></script>
+<script type="text/JavaScript">
+    function permute(input) {
+        var results = [];
+        function work(arr, memo) {
+            var cur, memo = memo || [];
+            for (var i = 0; i < arr.length; i++) {
+                cur = arr.splice(i, 1);
+                if (arr.length === 0) {
+                    results.push(memo.concat(cur));
+                }
+                work(arr.slice(), memo.concat(cur));
+                arr.splice(i, 0, cur[0]);
+            }
+            return results;
+        }
+        return work(input);
+    }
+
+    function palettes3(color) {
+        return dict.with(color).filter(function (p) {
+            return p.colors.length >= 3;
+        });
+    }
+
+    window.addEventListener("load", function() {
+        const select = document.createElement("select");
+        document.body.appendChild(select);
+        for (const color of dict.list()) {
+            if (palettes3(color).length > 0) {
+                const option = document.createElement("option");
+                option.value = color;
+                option.innerText = color;
+                select.appendChild(option);
+            }
+        }
+
+        const main = document.createElement("main");
+        document.body.appendChild(main);
+
+        function cleanup() {
+            main.innerHTML = "";
+        }
+
+        function paint(color) {
+            document.documentElement.style.backgroundColor = "rgb(" +
+                dict.rgb(color)[0] * 255 + ", " +
+                dict.rgb(color)[1] * 255 + ", " +
+                dict.rgb(color)[2] * 255 + ")";
+            document.documentElement.style.color =
+                dict.lab(color)[0] >= 50 ? 'black' : 'white';
+
+            const h1 = document.createElement("h1");
+            h1.innerText = color;
+            main.appendChild(h1);
+
+            for (const palette of palettes3(color)) {
+                const h2 = document.createElement("h2");
+                h2.innerText = palette.combination
+                main.appendChild(h2);
+
+                const p = document.createElement("p");
+                p.innerText = palette.colors.join(", ");
+                main.appendChild(p);
+
+                for (const permutation of permute(palette.colors)) {
+                    const canvas = document.createElement("canvas");
+                    canvas.width = 512;
+                    canvas.height = 512;
+                    main.appendChild(canvas);
+                    renderLogo({
+                        "canvas": canvas,
+                        "model": zurihac2024logo({
+                            "front": plain(dict.rgb(permutation[0])),
+                            "side": plain(dict.rgb(permutation[0])),
+                            "top": plain(dict.rgb(permutation[1])),
+                            "shade": plain(dict.rgb(permutation[2])),
+                        }),
+                    });
+                }
+            }
+        }
+
+        function change() {
+            cleanup();
+            paint(select.options[select.selectedIndex].value);
+        }
+
+        select.addEventListener("change", change);
+        change();
+    })
+</script>

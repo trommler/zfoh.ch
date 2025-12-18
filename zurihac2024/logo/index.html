@@ -1,0 +1,54 @@
+<style>
+    html {
+        font-family: sans-serif;
+    }
+</style>
+<script type="text/JavaScript" src="gl-matrix-min.js"></script>
+<script type="text/JavaScript" src="render2024logo.js"></script>
+<script type="text/JavaScript" src="zurihac2024logo.js"></script>
+<script type="text/JavaScript" src="colors.js"></script>
+
+<h1>T-shirt 275</h1>
+<p>Etruscan Red, Madder Brown, Taupe Brown</p>
+<canvas id="logo_275" width="1600" height="1600"></canvas>
+<script type="text/JavaScript">
+    renderLogo({
+        "canvasId": "logo_275",
+        "model": zurihac2024logo({
+            "front": plain(dict.rgb("Etruscan Red")),
+            "side": plain(dict.rgb("Etruscan Red")),
+            "top": plain(dict.rgb("Madder Brown")),
+            "shade": plain(dict.rgb("Taupe Brown")),
+        }),
+    });
+</script>
+
+<h1>Hoodie 325</h1>
+<p>Eugenia Red | B, Naples Yellow, Yellow Ocher</p>
+<canvas id="logo_325" width="1600" height="1600"></canvas>
+<script type="text/JavaScript">
+    renderLogo({
+        "canvasId": "logo_325",
+        "model": zurihac2024logo({
+            "front": plain(dict.rgb("Naples Yellow")),
+            "side": plain(dict.rgb("Naples Yellow")),
+            "top": plain(dict.rgb("Yellow Ocher")),
+            "shade": plain(dict.rgb("Eugenia Red | B")),
+        }),
+    });
+</script>
+
+<h1>Sticker 164</h1>
+<p>Eugenia Red | B, Naples Yellow, Yellow Ocher</p>
+<canvas id="logo_164" width="1600" height="1600"></canvas>
+<script type="text/JavaScript">
+    renderLogo({
+        "canvasId": "logo_164",
+        "model": zurihac2024logo({
+            "front": plain(dict.rgb("Red Orange")),
+            "side": plain(dict.rgb("Red Orange")),
+            "top": plain(dict.rgb("Orange Yellow")),
+            "shade": plain(dict.rgb("Violet")),
+        }),
+    });
+</script>
